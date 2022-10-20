@@ -5,7 +5,6 @@ import { useTodoListStore } from '@/stores/todoList'
 export default {
   setup () {
     const todo = ref('')
-
     const store = useTodoListStore()
 
     function addItemAndClear(item) {
@@ -14,6 +13,11 @@ export default {
         }
         store.addTodo(item)
         todo.value = ''
+    };
+
+    return {
+        addItemAndClear,
+        todo,
     }
   }
 }
